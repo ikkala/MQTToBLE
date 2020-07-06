@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "mqtt": "^2.18.8",
-    "noble": "^1.9.1"
+    "@abandonware/noble": "1.9.2-9"
   }
 }

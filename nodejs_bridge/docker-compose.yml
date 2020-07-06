@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  nodejs-bridge:
+    privileged: true
+    network_mode: "host"
+    environment:
+        MQTT_BRIDGE_SERVER: mqtt://test.mosquitto.org
+    build: ./

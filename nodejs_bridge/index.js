@@ -1,6 +1,6 @@
 // Node.js MQTT->BLE Bridge  for https://github.com/gfwilliams/MQTToBLE
 
-var MQTT_BRIDGE_SERVER = "mqtt://localhost"; // server that bridges are connected to
+var MQTT_BRIDGE_SERVER = process.env.MQTT_BRIDGE_SERVER || "mqtt://localhost"; // server that bridges are connected to
 var BRIDGENAME = "esp32";
 var DISCONNECT_TIMEOUT = 2000; // 2 seconds of inactivity
 var MQTToBLE_UUID_NODATA = "ac91000043be801f3ffc65d26351c312";
@@ -13,7 +13,7 @@ var mqtt = require('mqtt');
 var mqttClient  = mqtt.connect(MQTT_BRIDGE_SERVER);
 var mqttConnected = false;
 
-var noble = require('noble');
+var noble = require('@abandonware/noble');
 var btDevices = {};
 var btConnectedDevice = undefined;
 var btWriteFn = undefined;

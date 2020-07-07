@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mqtt": "^2.18.8",
-    "@abandonware/noble": "1.9.2-9"
+    "@abandonware/noble": "1.9.2-9",
+    "mqtt": "4.1.0"
   }
 }

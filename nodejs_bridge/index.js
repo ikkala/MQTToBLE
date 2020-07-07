@@ -215,6 +215,17 @@ function bleConnect(addr) {
   });
 };
 
+process.on('SIGTERM', () => {
+  console.log('Shutting down by SIGTERM signal');
+  noble.stopScanning();
+  Object.values(btDevices).forEach(function (btDevice) {
+    btDevice.removeAllListeners();
+  })
+  mqttClient.end(function () {
+    process.exit(0);
+  })
+});
+
 
 // debugging
 const repl = require('repl');
